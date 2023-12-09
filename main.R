@@ -11,10 +11,11 @@ rm(list=ls())
 source("utils.R")
 source("config.R")
 
-# load and normaize dataset
+# load and normalize dataset
 source("load.R")
 # create model and calculate predictions for test set
 source("neural.R")
 
 # show information for results and plot the neural network
 source("evaluate.R")
+
