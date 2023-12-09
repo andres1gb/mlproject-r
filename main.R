@@ -17,8 +17,4 @@ source("load.R")
 source("neural.R")
 
 # show information for results and plot the neural network
-print(describe(results[-3]))
-print(R2(results$prediction, results$actual, na.rm = TRUE))
-print(RMSE(results$prediction, results$actual, na.rm = TRUE))
-View(results)
-plot(nn)
+source("evaluate.R")
