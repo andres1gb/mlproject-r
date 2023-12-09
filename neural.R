@@ -2,6 +2,7 @@ sample <- sample(c(TRUE, FALSE), nrow(data), replace=TRUE, prob=c(train_size,1-t
 trainset  <- data[sample, ]
 testset   <- data[!sample, ]
 
+last_dimension = dimensions+3
 names <- colnames(testset)
 names <- names[3:last_dimension] # get all column names except day and price (predicted value)
 formula <- as.formula(paste('price ~ ' ,paste(names,collapse='+'))) # create the formula string

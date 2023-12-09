@@ -1,6 +1,8 @@
 rawdata <- read_csv("./data/complete.csv", 
     col_types = cols(.default="n", day = col_date(format = "%Y-%m-%d")))
 
+rawdata <- rawdata[1:1200,] # excludes rows after gas price cap !!!
+
 # sets NA gas prices to zero
 rawdata['gas_price'][is.na( rawdata['gas_price'])] <- 0
 
