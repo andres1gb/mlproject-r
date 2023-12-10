@@ -24,3 +24,4 @@ k = last_dimension - 2
 
 evaluate("Neural network evaluation", nn_results, n, k)
 print(distplot("NN distances", nn_results))
+print(distplot("NN distances", nn_results, 0.2))

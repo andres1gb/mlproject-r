@@ -19,3 +19,4 @@ k = last_dimension - 2
 
 evaluate("Support vector machine evaluation", svm_results, n, k)
 print(distplot("SVM distances", svm_results))
+print(distplot("SVM distances", svm_results, 0.2))

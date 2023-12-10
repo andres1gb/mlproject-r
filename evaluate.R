@@ -12,6 +12,10 @@ evaluate <- function(text, results, n, k) {
   cat("RMSE:", rmse, "\n", sep="")
 }
 
-distplot <- function(text, results) {
-  ggplot(aes(x=actual,y=error),data=results)+geom_point()+ggtitle(text)
+distplot <- function(text, results, max_error=1.0) {
+  if (max_error<1.0) {
+    text = paste(text, "(error <", max_error, ", outliers missing)")
+    
+  }
+  ggplot(aes(x=actual,y=error),data=results)+geom_point()+ggtitle(text)+ylim(-max_error,max_error)
 }
