@@ -17,4 +17,9 @@ min_price = getMin(data[2])
 max_price = getMax(data[2])
 data[2:143] = sapply(data[2:143], normalize)
 
+# Divide data in train and test datasets
+sample <- sample(c(TRUE, FALSE), nrow(data), replace=TRUE, prob=c(train_size,1-train_size))
+trainset  <- data[sample, ]
+testset   <- data[!sample, ]
+
 

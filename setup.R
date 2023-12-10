@@ -3,3 +3,4 @@ install.packages("readr") # import csv
 install.packages("neuralnet") # neural networks library
 install.packages("caret") # data normalization
 install.packages("psych") # data stats (describe function)
+install.packages("e1071") # SVM library

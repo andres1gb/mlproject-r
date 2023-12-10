@@ -1,15 +1,13 @@
-print(describe(results[-3]))
-print("R2:")
-r2 = R2(results$prediction, results$actual, na.rm = TRUE)
-print(r2)
-print("R2 adjusted:")
-n = nrow(testset)
-k = last_dimension - 2
-r2corr = 1-((1-r2)*(n-1)/(n-k-1))
-print(r2corr)
-print("RMSE:")
-print(RMSE(results$prediction, results$actual, na.rm = TRUE))
-View(results)
-if (plot) {
-  plot(nn)
+evaluate <- function(text, results, n, k) {
+  # n: number of rows
+  # k: number of dimensions
+  r2 = R2(results$prediction, results$actual, na.rm = TRUE)
+  r2adj = 1-((1-r2)*(n-1)/(n-k-1))
+  rmse = RMSE(results$prediction, results$actual, na.rm = TRUE)
+  
+  title(text)
+  print(describe(results[-3]))
+  cat("\nR2:", r2, "\n", sep="")
+  cat("R2 adjusted:", r2adj, "\n", sep="")
+  cat("RMSE:", rmse, "\n", sep="")
 }
