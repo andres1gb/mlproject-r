@@ -11,3 +11,7 @@ evaluate <- function(text, results, n, k) {
   cat("R2 adjusted:", r2adj, "\n", sep="")
   cat("RMSE:", rmse, "\n", sep="")
 }
+
+distplot <- function(text, results) {
+  ggplot(aes(x=actual,y=error),data=results)+geom_point()+ggtitle(text)
+}

@@ -12,6 +12,6 @@ nn_plot = FALSE # set TRUE to plot the neural network
 
 # SVM configuration
 svm_dimensions = 50 # use this number of variables to train the model
-svm_cost = 5 # cost for distance applied
+svm_cost = 3 # cost for distance applied
 svm_kernel = "linear" # linear or radial calculation
 svm_type = "eps-regression" # eps-regression or nu-regression, other methods are classifiers
