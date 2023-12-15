@@ -4,10 +4,12 @@ evaluate <- function(text, results, n, k) {
   r2 = R2(results$prediction, results$actual, na.rm = TRUE)
   r2adj = 1-((1-r2)*(n-1)/(n-k-1))
   rmse = RMSE(results$prediction, results$actual, na.rm = TRUE)
+  correlation = cor(results$prediction, results$actual)
   
   title(text)
   print(describe(results[-3]))
-  cat("\nR2:", r2, "\n", sep="")
+  cat("\nCorrelation: ", correlation, "\n", sep="")
+  cat("R2:", r2, "\n", sep="")
   cat("R2 adjusted:", r2adj, "\n", sep="")
   cat("RMSE:", rmse, "\n", sep="")
 }
